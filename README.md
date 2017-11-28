@@ -36,5 +36,9 @@ kubectl get pods -> sacamos ip del cluster
 
 kubectl exec ip-cluster -- python /app/manage.py migrate
 
-para scalar mecanicamente usamos: 
+para scalar mecanicamente usamos: 	
 kubectl scale rc APP --replicas=NUM
+
+IMPORANTE:
+para testear el autoescalamiento usar:
+while true; do (curl http://{ip externa}/ &); sleep 0.01; done
